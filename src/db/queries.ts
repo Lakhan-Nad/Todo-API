@@ -9,7 +9,7 @@ export function insertTask(
   const connection = getConnection();
   return new Promise<string>((res, rej) => {
     connection.query(
-      "INSERT INTO TASKS(description, category, dueDate) VALUES (?, ?, ?)",
+      "INSERT INTO TASKS(title, description, category, dueDate) VALUES (?, ?, ?, ?)",
       [title, description, category, dueDate],
       (err, result) => {
         if (err) {
